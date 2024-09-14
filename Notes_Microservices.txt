@@ -1,0 +1,38 @@
+MySQL_DB:
+
+CREATE DATABASE questiondb;
+USE questiondb;
+
+CREATE TABLE question (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    question_text VARCHAR(255) NOT NULL,
+    answer VARCHAR(255) NOT NULL
+);
+
+INSERT INTO question (question_text, answer) VALUES
+('What is the capital of France?', 'Paris'),
+('What is the largest planet in our solar system?', 'Jupiter'),
+('What is the boiling point of water?', '100°C'),
+('Who wrote "Romeo and Juliet"?', 'William Shakespeare'),
+('What is the fastest land animal?', 'Cheetah');
+
+SELECT * FROM question;
+
+
+
+GET:
+
+http://localhost:8081/questions and http://localhost:8080/questions
+http://localhost:8082/quiz/start and http://localhost:8080/quiz/start
+
+
+POST:
+http://localhost:8082/quiz/submit and http://localhost:8080/quiz/submit
+
+{
+  "1": "Paris",
+  "2": "Jupiter",
+  "3": "100°C",
+  "4": "William Shakespeare",
+  "5": "Cheetah"
+}
